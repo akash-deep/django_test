@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Language :: {{ language }}</h2>
+<a href = "/articles/language/en-gb/"> Change time </a>
+<h1>Articles</h1>
+{% for article in articles %}
+<div>
+<h2> {{ article.title }} </h2>
+<p> {{ article.body|truncatewords:"10" }}
+<a href = "/articles/get/{{ article.id }}/"> Click to view more </a>
+</p>
+</div>
+{% endfor %}
+
+{% endblock %}
